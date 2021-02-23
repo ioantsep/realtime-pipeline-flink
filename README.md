@@ -49,17 +49,28 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 	```
 	cd /opt/kafka
 	bin/zookeeper-server-start.sh config/zookeeper.properties
+	
 	```
 
-2. Εκκίνηση του Kafka server στο terminal 2 με τις εντολές: 
+2. Starting Kafka server in terminal 2: 
 	```
 	cd /opt/kafka
 	bin/kafka-server-start.sh config/server.properties 
+	
 	```
 
-3. 
+3. Creation of topic "iotdata" in terminal 3: 
+	```
+	cd /opt/kafka
+	bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic iotdata 
+	
+	```
 
-4. 	[package.json](https://github.com/ioantsep/weather-pipeline/blob/main/package.json). 
+4. In the same terminal(terminal 3), starting Cassandra: 
+	```
+	cassandra -f
+	
+	```
 	
 5. 
 
