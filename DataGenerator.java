@@ -1,7 +1,7 @@
 package producer;
 import java.util.Properties; 
 import java.util.concurrent.ThreadLocalRandom;
-importjava.util.Random; 
+import java.util.Random; 
 import org.apache.kafka.clients.producer.KafkaProducer; 
 import org.apache.kafka.clients.producer.ProducerRecord; 
 import java.util.Date;
