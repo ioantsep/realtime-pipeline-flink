@@ -83,7 +83,7 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 	cd /opt/flink
 	bin/start-cluster.sh
 	```
-   You can check the status of Apache Flink using the web interface: http://localhos:8081/#/overview. 
+   You can check the status of Apache Flink using the web interface: `http://localhos:8081/#/overview`. 
    
 8. In the same terminal(terminal 6) starting the  Apache Maven project:
 	```
@@ -96,12 +96,15 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 	mvn exec:java -Dexec.mainClass="producer.DataGenerator" 
 	```
 	
-10. Viewing the Flink Plan Visualizer using the `https://flink.apache.org/visualize`: https://<i></i>flink.apache.org/visualize
+10. Viewing the Flink Plan Visualizer using the `https://flink.apache.org/visualize`:
 
-	![flink_visual](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/flink_visual.png)
+	![web_flink2](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/web_flink2.png)
 
 
-11. Viewing the data transers μέσω του web interface του Apache Flink
+11. Viewing the data transfering status of Apache Flink using the web interface: `http://localhos:8081/#/overview`. 
+
+   ![data_cassandra](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/data_cassandra.png)
+   
 
 12. Check data status in Apache Cassandra in terminal 8: 
 	```
@@ -123,9 +126,11 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 	kibana
 	```
 	
-14. Viewing the data in Kibana using the web interface: http://localhos:5601.http://<i></i>localhos:5601
+14. Viewing the data in Kibana using the web interface: `http://localhos:5601`:
 
 	![kibana](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/kibana.png)
+	
+	
 	
 	
 	
