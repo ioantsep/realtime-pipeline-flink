@@ -6,6 +6,9 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 - [x] create a dashboard that displays the information using Kibana
 
 ## **Tools - Frameworks** ##
+- Virtual Machine: VirtualBox v5.2.26, 
+- Hardware settings: 2 cores, 6GB RAM, 12GB HDD, 
+- OS: Ubuntu 18.04 (Debian Linux) 
 - Oracle Java v1.80,
 - Apache Maven v3.6.0,
 - Apache Kafka v2.1-2.1.0,
@@ -13,7 +16,6 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 - Apache Cassandra v3.11.4,
 - Elasticsearch v6.6.1,
 - Kibana v6.6.1.
-
 
 
 ## Dataset Information ##
@@ -43,43 +45,39 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 
 
 ## **Build, Provision and Deploy the Project** ##
-1. Sign-in to Google Cloud Platform console and create a new project, project_name = "iotpipeline", project_ID = "iotpipeline-243711'".
+1. Starting Zookeeper(Kafka) in terminal 1: 
+	```
+	cd /opt/kafka
+	bin/zookeeper-server-start.sh config/zookeeper.properties
+	```
 
-2. Creation of a table in BigQuery: "BIG DATA" --> "BigQuery" --> click on projectID --> "CREATE DATASET" with DatasetID = "weatherData" -->  click on "CREATE   TABLE" --> "Source Data" --> "Empty table", "Table type" = "Native table", "Table name" = "weatherDataTable", "Schema" --> "Add field" with 9 features. 
+2. Εκκίνηση του Kafka server στο terminal 2 με τις εντολές: 
+	```
+	cd /opt/kafka
+	bin/kafka-server-start.sh config/server.properties 
+	```
 
-3. Creation of a Pub/Sub topic: "BIG DATA" --> "Pub/Sub" --> "Topics" --> "Enable API" --> "Create a topic", name ="weatherdata" --> "CREATE". 
+3. 
 
-4. Connect Pub/Sub with BigQuery using Cloud Functions: "COMPUTE" --> "Cloud Functions" --> "Enable API" --> "Create function", "name" = "weatherPubSubToBQ", "Trigger" = "Cloud Pub/Sub", "Topic" = "weatherdata", "Source code" = "Inline editor". In tab "index.js", write the JavaScript code (Node.js 6): [index.js](https://github.com/ioantsep/weather-pipeline/blob/main/index.js) and in the tab "package.json" write code : 	[package.json](https://github.com/ioantsep/weather-pipeline/blob/main/package.json). Then in "Function to execute" = "subscribe" --> "Create".	
+4. 	[package.json](https://github.com/ioantsep/weather-pipeline/blob/main/package.json). 
 	
-5. Creation of a storage bucket for Dataflow: "STORAGE" --> "Browser" --> "Create bucket", "iotpipeline-bucket" --> "Create".
+5. 
 
-6. Dataflow API: "API & Services" --> "Enable API and Services" --> "Welcome to the new API Library", search bar = "Dataflow" --> " Google Dataflow API" --> "Enable".
+6. 
 
-7. Creation of template in Dataflow: "BIG DATA" --> "Dataflow" --> "CREATE JOB FROM TEMPLATE" with:
- - "Job name" = "dataflow-gcs-to-pubsub4", 
- - "Cloud Dataflow template" = "Text Files on Cloud Storage to Cloud Pub/Sub",
- - "Input Cloud Storage File(s)" με "gs://codelab-iot-data-pipeline-sampleweatherdata/*.json" (public dataset), 
- - "Output Pub/Sub Topic" = "projects/iotpipeline-243711/topics/weatherdata", 
- - "Temporary location" = "gs://iotpipeline-bucket/tmp".
+7. 
  
-   Click on "Run job" and Dataflow starts.
-   
-   	![dataflow](https://github.com/ioantsep/weather-pipeline-on-GCP/blob/main/Images/dataflow.png)
-   
+  
+   	
    
 
-8. Checking the Data Flow: BigQuery --> "iotpipeline-243711", Dataset = "weatherData", Table = "weatherDataTable" --> "QUERY TABLE", --> Query editor: 		
-	```
-	SELECT * FROM `iotpipeline-243711.weatherData.weatherDataTable` LIMIT 1000	
-	```
+8. 
 	
-	![BigQuery](https://github.com/ioantsep/weather-pipeline-on-GCP/blob/main/Images/BigQuery%20table.png)
+	
+	
 	
    
 	
 
-9. Creation graphs using Data Studio: "Query results" --> "EXPLORE WITH DATA STUDIO".
-
-	![DataStudio](https://github.com/ioantsep/weather-pipeline-on-GCP/blob/main/Images/Data%20Studio.png)
-   
+9. 
 
