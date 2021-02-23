@@ -96,7 +96,7 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 	mvn exec:java -Dexec.mainClass="producer.DataGenerator" 
 	```
 	
-10. Viewing the Flink Plan Visualizer using the https://flink.apache.org/visualize:https://<i></i>flink.apache.org/visualize
+10. Viewing the Flink Plan Visualizer using the `https://flink.apache.org/visualize`: https://<i></i>flink.apache.org/visualize
 
 	![flink_visual](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/flink_visual.png)
 
