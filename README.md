@@ -101,23 +101,31 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 	![flink_visual](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/flink_visual.png)
 
 
-11.	Παρακολούθηση και έλεγχος των ενεργοποιημένων διαδικασιών και της μεταφοράς των δεδομένων (από την πηγή στις δεξαμενές), μέσω του web interface του Apache Flink, όπως απεικονίζεται στην Εικόνα 4-13.
+11. Viewing the data transers μέσω του web interface του Apache Flink
 
-11.	Έλεγχος εισόδου των δεδομένων στην Apache Cassandra, όπως διακρίνεται στην Εικόνα 4-14, με χρήση των εντολών cql σε νέο terminal, το terminal 9: 
+12. Check data status in Apache Cassandra in terminal 9: 
+	```
+	use pollution;
+	select * from sensor6; 
+	```
+	![data_cassandra](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/data_cassandra.png)
+	
+13. Check data status in Elasticsearch in terminal 6: 
+	```
+	curl -XGET 'localhost:9200/iotdata/sensor6/_search?pretty'
+	```
+	
+	![elastic_data](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/elastic_data.png)
+	
+	
+13. Starting Kibana in terminal 10: 
+	```
+	kibana
+	```
+	
+14. Viewing the data in Kibana using the web interface: http://localhos:5601.
 
-use pollution;
-select * from sensor6; 
-
-12.	Έλεγχος εισόδου των δεδομένων στην Elasticsearch, όπως απεικονίζεται στην Εικόνα 4-15, στο terminal 6, με τη χρήση της εντολής: 
-
-curl -XGET 'localhost:9200/iotdata/sensor6/_search?pretty'
-
-13.	Τέλος, ενεργοποίηση του Kibana, στο terminal 10, με την εντολή: 
-
-kibana
-
-και έπειτα, μέσω της διεπαφής ιστού (web interface) που διαθέτει, στη διεύθυνση http://localhos:5601, γίνεται οπτικοποίηση των δεδομένων, όπως φαίνεται στην Εικόνα 4-16.
-
+	![kibana](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/kibana.png)
 	
 	
 	
