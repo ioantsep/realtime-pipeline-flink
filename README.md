@@ -45,11 +45,8 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 
 
 ## **Coding** ##
-- Apache Kafka Producer code: [DataGenerator.java](https://github.com/ioantsep/weather-pipeline/blob/main/package.json)
-- Apache Kafka Consumer code: [DataGenerator.java](https://github.com/ioantsep/weather-pipeline/blob/main/package.json)
-
-
-
+- Apache Kafka Producer code: [DataGenerator.java](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/coding/DataGenerator.java)
+- Apache Kafka Consumer code: [sendtosink.java](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/coding/sendtosink.java)
 
 ## **Build, Provision and Deploy the Project** ##
 1. Starting Zookeeper(Kafka) in terminal 1: 
