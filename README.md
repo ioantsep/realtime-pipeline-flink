@@ -98,12 +98,12 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 	
 10. Viewing the Flink Plan Visualizer using the `https://flink.apache.org/visualize`:
 
-	![web_flink2](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/web_flink2.png)
+	![flink_visual](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/flink_visual.png)
 
 
 11. Viewing the data transfering status of Apache Flink using the web interface: `http://localhos:8081/#/overview`. 
 
-   ![data_cassandra](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/data_cassandra.png)
+   ![web_flink2](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/web_flink2.png)
    
 
 12. Check data status in Apache Cassandra in terminal 8: 
