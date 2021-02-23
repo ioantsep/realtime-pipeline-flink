@@ -15,7 +15,7 @@ Apache Maven, Apache Kafka, Apache Flink, Apache Cassandra, Elasticsearch, Kiban
 
 ## Pipeline Architecture ##
 
-![pipeline](https://github.com/ioantsep/weather-pipeline-on-GCP/blob/main/Images/pipeline.png)
+![architect](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/architect_system.png)
 
 
 
