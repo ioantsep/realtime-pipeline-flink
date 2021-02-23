@@ -43,7 +43,7 @@ public class DataGenerator {
 		 
 		System.out.println(stream.toString()); 
     
-		ProducerRecord<Integer, String> data = newProducerRecord<Integer, String>("iotdata", stream.toString()); 
+		ProducerRecord<Integer, String> data = new ProducerRecord<Integer, String>("iotdata", stream.toString()); 
 		
 		producer.send(data);  
 		
