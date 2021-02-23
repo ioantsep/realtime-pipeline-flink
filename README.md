@@ -9,7 +9,7 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 - Virtual Machine: VirtualBox v5.2.26, 
 - Hardware settings: 2 cores, 6GB RAM, 12GB HDD, 
 - OS: Ubuntu 18.04 (Debian Linux) 
-- Oracle Java v1.80,
+- Oracle Java v1.80, 
 - Apache Maven v3.6.0,
 - Apache Kafka v2.1-2.1.0,
 - Apache Flink v1.7.2,
@@ -42,6 +42,13 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 - __Data Flow 4:__ send to Elasticsearch
 
 - __Visualize__: using Kibana
+
+
+## **Coding** ##
+- Apache Kafka Producer code: [DataGenerator.java](https://github.com/ioantsep/weather-pipeline/blob/main/package.json)
+- Apache Kafka Consumer code: [DataGenerator.java](https://github.com/ioantsep/weather-pipeline/blob/main/package.json)
+
+
 
 
 ## **Build, Provision and Deploy the Project** ##
