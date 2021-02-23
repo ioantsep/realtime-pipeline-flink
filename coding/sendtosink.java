@@ -67,7 +67,7 @@ import java.util.Map;
 	// Cassansdra KEYSPACE pollution Table sensor 		
     	CassandraSink
                   .addSink(stream) 				
-		              .setQuery("INSERT INTO pollution.sensor6 (O3, PM, CO, SO2, NO2, time) values (?, ?, ?, ?, ?, ?);") 			
+		  .setQuery("INSERT INTO pollution.sensor6 (O3, PM, CO, SO2, NO2, time) values (?, ?, ?, ?, ?, ?);") 			
                   .setClusterBuilder(new ClusterBuilder() {
                       private static final long serialVersionUID = 1L;  				
                      
