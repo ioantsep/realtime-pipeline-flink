@@ -22,17 +22,18 @@ public class DataGenerator {
 	while (counter<check) {
 		StringBuffer stream = new StringBuffer();
 		int ozone = ThreadLocalRandom.current().nextInt(15,215);
-    int particullate_matter = ThreadLocalRandom.current().nextInt(15,215); 					
-    int carbon_monoxide = ThreadLocalRandom.current().nextInt(15, 215); 					
-    int sulfure_dioxide = ThreadLocalRandom.current().nextInt(15, 215); 					
-    int nitrogen_dioxide = ThreadLocalRandom.current().nextInt(15, 215); 				
+    		int particullate_matter = ThreadLocalRandom.current().nextInt(15,215); 					
+    		int carbon_monoxide = ThreadLocalRandom.current().nextInt(15, 215); 					
+    		int sulfure_dioxide = ThreadLocalRandom.current().nextInt(15, 215); 					
+    		int nitrogen_dioxide = ThreadLocalRandom.current().nextInt(15, 215); 	
+		
 		// create timestamp --> format: yyyy-M-dd HH:mm:ss  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-dd HH:mm:ss"); 				
 		String date = sdf.format(new Date());  
 		stream.append(ozone); 			
 		stream.append(","); 									
-    stream.append(particullate_matter); 			
+    		stream.append(particullate_matter); 			
 		stream.append(","); 									
-    stream.append(carbon_monoxide); 			
+    		stream.append(carbon_monoxide); 			
 		stream.append(","); 			
 		stream.append(sulfure_dioxide); 			
 		stream.append(","); 			
@@ -43,14 +44,15 @@ public class DataGenerator {
 		System.out.println(stream.toString()); 
     
 		ProducerRecord<Integer, String> data = newProducerRecord<Integer, String>("iotdata", stream.toString()); 
+		
 		producer.send(data);  
 		
-    //send every 5 seconds
-			try {     				
-				Thread.sleep(5000); 			
-			} 			
-			catch(InterruptedException ex) { Thread.currentThread().interrupt(); 			
-			} 
+    		//send every 5 seconds
+		try {     				
+			Thread.sleep(5000); 			
+		    } 			
+		catch(InterruptedException ex) { Thread.currentThread().interrupt(); 			
+		    } 
 	} 		 		
 	producer.close(); 	
    } 
