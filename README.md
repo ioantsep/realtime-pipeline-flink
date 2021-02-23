@@ -49,46 +49,76 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 	```
 	cd /opt/kafka
 	bin/zookeeper-server-start.sh config/zookeeper.properties
-	
 	```
 
 2. Starting Kafka server in terminal 2: 
 	```
 	cd /opt/kafka
 	bin/kafka-server-start.sh config/server.properties 
-	
 	```
 
 3. Creation of topic "iotdata" in terminal 3: 
 	```
 	cd /opt/kafka
 	bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic iotdata 
-	
 	```
 
 4. In the same terminal(terminal 3), starting Cassandra: 
 	```
 	cassandra -f
-	
 	```
 	
-5. 
-
-6. 
-
-7. 
- 
-  
-   	
+5. Staring Elasticsearch in terminal 4:
+	```
+	elasticsearch
+	```
+	
+6. Check the Elasticsearch status in terminal 5:
+	```
+	curl -X GET "localhost:9200" 
+	```
+	
+7. Starting Apache Flink in terminal 6: 
+	```
+	cd /opt/flink
+	bin/start-cluster.sh
+	```
+   You can check the status of Apache Flink using the web interface: http://localhos:8081/#/overview. 
    
+8. In the same terminal(terminal 6) starting the  Apache Maven project:
+	```
+	bin/flink run -c sendtosink.sendtosink /opt/maven-projects/0304pollution/target/pollution-0.1.jar 
+	```
+	
+9. Starting Kafka's Producer in terminal 7, for sending the data to Kafka:
+	```
+	cd /opt/maven-projects/01pollution
+	mvn exec:java -Dexec.mainClass="producer.DataGenerator" 
+	```
+	
+10. Viewing the Flink Plan Visualizer using the https://flink.apache.org/visualize:
 
-8. 
-	
-	
-	
-	
-   
-	
+	![flink_visual](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/flink_visual.png)
 
-9. 
 
+11.	Παρακολούθηση και έλεγχος των ενεργοποιημένων διαδικασιών και της μεταφοράς των δεδομένων (από την πηγή στις δεξαμενές), μέσω του web interface του Apache Flink, όπως απεικονίζεται στην Εικόνα 4-13.
+
+11.	Έλεγχος εισόδου των δεδομένων στην Apache Cassandra, όπως διακρίνεται στην Εικόνα 4-14, με χρήση των εντολών cql σε νέο terminal, το terminal 9: 
+
+use pollution;
+select * from sensor6; 
+
+12.	Έλεγχος εισόδου των δεδομένων στην Elasticsearch, όπως απεικονίζεται στην Εικόνα 4-15, στο terminal 6, με τη χρήση της εντολής: 
+
+curl -XGET 'localhost:9200/iotdata/sensor6/_search?pretty'
+
+13.	Τέλος, ενεργοποίηση του Kibana, στο terminal 10, με την εντολή: 
+
+kibana
+
+και έπειτα, μέσω της διεπαφής ιστού (web interface) που διαθέτει, στη διεύθυνση http://localhos:5601, γίνεται οπτικοποίηση των δεδομένων, όπως φαίνεται στην Εικόνα 4-16.
+
+	
+	
+	
+	
