@@ -38,11 +38,11 @@ import java.util.Map;
                           properties.setProperty("bootstrap.servers", "localhost:9092");     	
                           properties.setProperty("group.id", "flink_consumer"); 		
                           
-    //Kafka with topic name='iotdata'  		
-  FlinkKafkaConsumer09<String> flinkKafkaConsumer09 = newFlinkKafkaConsumer09<>("iotdata", new SimpleStringSchema(), properties); 
+    	//Kafka with topic name='iotdata'  		
+  	FlinkKafkaConsumer09<String> flinkKafkaConsumer09 = newFlinkKafkaConsumer09<>("iotdata", new SimpleStringSchema(), properties); 
 
 	// set up the streaming execution environment     		
-  StreamExecutionEnvironment env = 	StreamExecutionEnvironment.getExecutionEnvironment();   		
+  	StreamExecutionEnvironment env = 	StreamExecutionEnvironment.getExecutionEnvironment();   		
 	
 	//Read data from kafka  				
 	DataStream<Tuple6<Integer, Integer, Integer, Integer, Integer, 	String>> stream = env
@@ -65,7 +65,7 @@ import java.util.Map;
 	); 
  			    				
 	// Cassansdra KEYSPACE pollution Table sensor 		
-    CassandraSink
+    	CassandraSink
                   .addSink(stream) 				
 		              .setQuery("INSERT INTO pollution.sensor6 (O3, PM, CO, SO2, NO2, time) values (?, ?, ?, ?, ?, ?);") 			
                   .setClusterBuilder(new ClusterBuilder() {
@@ -80,7 +80,7 @@ import java.util.Map;
      		 	 		
 	/* Elasticsearch Configuration*/ 		
 	List<HttpHost> httpHosts = new ArrayList<>();
-  httpHosts.add(new HttpHost("127.0.0.1", 9200, "http")); 
+  	httpHosts.add(new HttpHost("127.0.0.1", 9200, "http")); 
 
 	ElasticsearchSink.Builder<Tuple6<Integer, Integer, Integer, Integer, Integer, String>> esSinkBuilder = new ElasticsearchSink.Builder<>( 
 		    httpHosts,
@@ -108,8 +108,8 @@ import java.util.Map;
 			@Override             					
 			public void process(Tuple6<Integer, Integer, Integer, Integer, Integer,String> element, RuntimeContext ctx, RequestIndexer indexer)
   			{             										
-        indexer.add(createIndexRequest(element));         				
-        } 			
+        	indexer.add(createIndexRequest(element));         				
+        		} 			
 		} 		
 	);  		
 
