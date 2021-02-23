@@ -12,6 +12,8 @@ Apache Maven, Apache Kafka, Apache Flink, Apache Cassandra, Elasticsearch, Kiban
 ## Dataset Information ##
 - Simulate an IoT sensor using Java and creation of a 6 features instances (ozone, particullate_matter, carbon_monoxide, sulfure_dioxide, nitrogen_dioxide, time)   every 5 sec.
 
+![IoT_simulation](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/IoT_simul.png)
+
 
 ## Pipeline Architecture ##
 
@@ -30,10 +32,10 @@ Apache Maven, Apache Kafka, Apache Flink, Apache Cassandra, Elasticsearch, Kiban
 
 - __Data Flow 4:__ send to Elasticsearch
 
-- __visualize__: using Kibana
+- __Visualize__: using Kibana
 
 
-## **Build, Provision and Deploy the Project on GCP** ##
+## **Build, Provision and Deploy the Project** ##
 1. Sign-in to Google Cloud Platform console and create a new project, project_name = "iotpipeline", project_ID = "iotpipeline-243711'".
 
 2. Creation of a table in BigQuery: "BIG DATA" --> "BigQuery" --> click on projectID --> "CREATE DATASET" with DatasetID = "weatherData" -->  click on "CREATE   TABLE" --> "Source Data" --> "Empty table", "Table type" = "Native table", "Table name" = "weatherDataTable", "Schema" --> "Add field" with 9 features. 
