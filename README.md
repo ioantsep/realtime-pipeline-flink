@@ -6,13 +6,13 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 - [x] create a dashboard that displays the information using Kibana
 
 ## **Tools - Frameworks** ##
-• 	Oracle Java v1.80,
-•	Apache Maven v3.6.0,
-•	Apache Kafka v2.1-2.1.0,
-•	Apache Flink v1.7.2,
-•	Apache Cassandra v3.11.4,
-•	Elasticsearch v6.6.1,
-•	Kibana v6.6.1.
+- Oracle Java v1.80,
+- Apache Maven v3.6.0,
+- Apache Kafka v2.1-2.1.0,
+- Apache Flink v1.7.2,
+- Apache Cassandra v3.11.4,
+- Elasticsearch v6.6.1,
+- Kibana v6.6.1.
 
 
 
