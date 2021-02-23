@@ -63,7 +63,7 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 	bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic iotdata 
 	```
 
-4. In the same terminal(terminal 3), starting Cassandra: 
+4. In the same terminal(terminal 3), starting the Apache Cassandra: 
 	```
 	cassandra -f
 	```
@@ -85,7 +85,7 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 	```
    You can check the status of Apache Flink using the web interface: `http://localhos:8081/#/overview`. 
    
-8. In the same terminal(terminal 6) starting the  Apache Maven project:
+8. In the same terminal(terminal 6), starting the Apache Maven project:
 	```
 	bin/flink run -c sendtosink.sendtosink /opt/maven-projects/0304pollution/target/pollution-0.1.jar 
 	```
@@ -113,7 +113,7 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 	```
 	![data_cassandra](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/data_cassandra.png)
 	
-13. Check data status in Elasticsearch in terminal 6: 
+13. Check data status in Elasticsearch in terminal 5: 
 	```
 	curl -XGET 'localhost:9200/iotdata/sensor6/_search?pretty'
 	```
