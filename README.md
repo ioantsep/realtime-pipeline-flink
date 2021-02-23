@@ -44,7 +44,7 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 - __Visualize__: using Kibana
 
 
-## **Apache Kafka coding** ##
+## **Coding** ##
 - Apache Kafka Producer code: [DataGenerator.java](https://github.com/ioantsep/weather-pipeline/blob/main/package.json)
 - Apache Kafka Consumer code: [DataGenerator.java](https://github.com/ioantsep/weather-pipeline/blob/main/package.json)
 
