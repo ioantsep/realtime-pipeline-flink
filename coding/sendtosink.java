@@ -1,6 +1,6 @@
 package sendtosink;  
-//Kafka import 
-java.util.Properties; 
+//Kafka 
+import java.util.Properties; 
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer09; 
 import org.apache.flink.streaming.util.serialization.SimpleStringSchema;  
 //Flink 
@@ -39,16 +39,16 @@ import java.util.Map;
                           properties.setProperty("group.id", "flink_consumer"); 		
                           
     	//Kafka with topic name='iotdata'  		
-  	FlinkKafkaConsumer09<String> flinkKafkaConsumer09 = newFlinkKafkaConsumer09<>("iotdata", new SimpleStringSchema(), properties); 
+  	FlinkKafkaConsumer09<String> flinkKafkaConsumer09 = new FlinkKafkaConsumer09<>("iotdata", new SimpleStringSchema(), properties); 
 
 	// set up the streaming execution environment     		
-  	StreamExecutionEnvironment env = 	StreamExecutionEnvironment.getExecutionEnvironment();   		
+  	StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();   		
 	
 	//Read data from kafka  				
 	DataStream<Tuple6<Integer, Integer, Integer, Integer, Integer, 	String>> stream = env
-                                                                           .addSource(flinkKafkaConsumer09) 			
-		                                                                       .rebalance() 			
-		                                                                       .map(new MapFunction<String, Tuple6<Integer,Integer,Integer,Integer,Integer,String>>()   	{  			
+                                                                           	.addSource(flinkKafkaConsumer09) 			
+		                                                                .rebalance() 			
+		                                                                .map(new MapFunction<String, Tuple6<Integer,Integer,Integer,Integer,Integer,String>>()   	{  			
 
 		@Override 			
 		public Tuple6<Integer, Integer, Integer, Integer, Integer,String> map(String input) throws Exception 			
