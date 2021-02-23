@@ -103,7 +103,7 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 
 11. Viewing the data transers μέσω του web interface του Apache Flink
 
-12. Check data status in Apache Cassandra in terminal 9: 
+12. Check data status in Apache Cassandra in terminal 8: 
 	```
 	use pollution;
 	select * from sensor6; 
@@ -118,12 +118,12 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 	![elastic_data](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/elastic_data.png)
 	
 	
-13. Starting Kibana in terminal 10: 
+13. Starting Kibana in terminal 9: 
 	```
 	kibana
 	```
 	
-14. Viewing the data in Kibana using the web interface: http://localhos:5601.
+14. Viewing the data in Kibana using the web interface: http://localhos:5601.http://<i></i>localhos:5601
 
 	![kibana](https://github.com/ioantsep/realtime-pipeline-kafka-flink/blob/main/images/kibana.png)
 	
