@@ -4,7 +4,7 @@ The goal of this project is to build a real-time air pollution data pipeline on 
 - [x] utilizes a message queue to receive and deliver the data through Apache Kafka,
 - [x] uses the Apache Flink to move the data into different sinks (Apache Cassandra and Elasticsearch)
       as an Extract - Load data flow, 
-- [x] creates a dashboard that displays the information using Kibana
+- [x] creates a dashboard that displays the information using Kibana.
 
 ## **Tools - Frameworks** ##
 - Virtual Machine: VirtualBox v5.2.26, 
